@@ -1,4 +1,4 @@
-import { FC, useEffect} from "react"
+import { useEffect} from "react"
 import './UsersPage.sass'
 import {UserCard} from "./UserCard";
 import {ShowMoreButton} from "../common/ShowMoreButton"
@@ -9,7 +9,7 @@ import {testAppSelector} from "../../redux/selectors";
 
 
 
-export const UsersPage: FC<UsersPageProps> = () => {
+export const UsersPage = () => {
     const dispatch = useAppDispatch()
     const users=useSelector(testAppSelector.users)
     const {nextPage} = useSelector(testAppSelector.searchData)
@@ -34,5 +34,3 @@ export const UsersPage: FC<UsersPageProps> = () => {
     )
 
 }
-
-type UsersPageProps = {}
