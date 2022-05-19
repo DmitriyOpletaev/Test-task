@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap')
+
+
+
+//App
+$page-max-width: 1170px
+$page-background: #F8F8F8
+//font
+$app-font-family:'Nunito', sans-serif
+$app-font-size: 16px
+$title-font-size: 40px
+
+//main-colors
+$primary-color: #F4E041
+$primary-button-color-hover:  #ffea1a
+$primary-button-transition: background-color 0.3s linear
+$secondary-color:#00BDD3
+$error-color:#CB3D40
+
+// Header
+$header-height: 60px
+
+// Main page
+$main-page-height: 100vh
+$main-page-height-media: 600px
+$main-page-background:url('assets/main-page-background.jpeg') center center no-repeat
+
+// Inputs
+$input-padding-left: 16px
+$disabled-input-color: #7E7E7E
+$disabled-input-border-color: #D0CFCF
+$input-width:328px
+$large-input-width:380px //screen-width > 768px
+$input-message-font-size:12px
+$input-height: 54px
+
+
+
+
+
+body
+     margin: 0
+     padding: 0
+     background: $page-background
+     font-family: $app-font-family
+     font-size: $app-font-size
+     font-weight: 400
+     line-height: 26px
+     text-align: center
+     h1
+          font-size: $title-font-size
+          line-height: 40px
+          margin: 0
+     .app-preloader-container
+          margin-top: 30vh
+     .app
+
+          .header-wrapper
+               background: white
+               height: $header-height
+               position: fixed
+               top: 0
+               width: 100%
+               z-index: 5
+               .header
+                    margin: 0 auto
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    max-width: $page-max-width
+                    padding: 0 16px
+                    @media (min-width: 768px)
+                         padding: 0 32px
+                    @media (min-width: 1024px)
+                         padding: 0 60px
+                    @media (min-width: $page-max-width)
+                         padding: 0
+                    img
+                         width: 104px
+                    .buttons-container
+                         width: 210px
+                         display: flex
+                         justify-content: space-between
+          .content-wrapper
+               max-width: $page-max-width
+               margin: $header-height auto 0
+               .secondary-pages-wrapper
+                    padding: 0 16px 100px 16px
+                    @media (min-width: 768px)
+                         padding: 0 32px 100px 32px
+                    @media (min-width: 1024px)
+                         padding: 0 60px 100px 60px
+                    @media (min-width: $page-max-width)
+                         padding: 0 0 100px 0
+
+
+
+
+

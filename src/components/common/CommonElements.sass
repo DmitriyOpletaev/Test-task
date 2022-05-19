@@ -1,0 +1,211 @@
+@import '../../App'
+
+
+
+//buttons
+.primary-button
+     width: 100px
+     height: 34px
+     background-color: $primary-color
+     border: none
+     border-radius: 80px
+     cursor: pointer
+     transition: $primary-button-transition
+     position: relative
+     text-align: center
+
+     &:hover
+          transition: $primary-button-transition
+          background-color: $primary-button-color-hover
+
+     &:active
+          transform: scale(0.98)
+          color: black
+
+     &:disabled
+          transition: all 0.3s 0.2s
+          background-color: #B4B4B4
+          color: #FFFFFF
+
+
+//tooltip
+.tooltip-container
+     position: relative
+     height: 20px
+     cursor: pointer
+
+     &:hover
+          .tooltip
+               display: block
+
+     .tooltip
+          position: absolute
+          background: rgba(0, 0, 0, 0.93)
+          border-radius: 10px
+          padding: 2px
+          color: white
+          top: 30px
+          display: none
+
+
+
+
+//radio-buttons
+.radio-buttons-container
+
+     margin-top: 7px
+     position: relative
+     filter: hue-rotate(-40deg) saturate(180%)
+     -webkit-filter: hue-rotate(-40deg) saturate(180%)
+
+     label
+          display: flex
+          cursor: pointer
+          user-select: none
+
+          input[type='radio']
+               height: 20px
+               width: 20px
+               cursor: pointer
+
+
+// Avatar
+$user-null-photo: url('../../assets/user-null-photo.svg')
+.avatar
+     border-radius: 50%
+     height: 70px
+     width: 70px
+     overflow: hidden
+     background: $user-null-photo center center no-repeat
+
+     img
+          object-fit: cover
+          height: 100%
+          width: 100%
+          object-position: center center
+
+
+//upload file input
+.upload-field-container
+     position: relative
+     .photo-upload-field
+          display: flex
+          width: $input-width
+          height: $input-height
+          @media(min-width: 768px)
+               width: $large-input-width
+          .upload-button
+               height: 100%
+               width: 83px
+               border: 1px solid rgba(0, 0, 0, 0.87)
+               border-radius: 4px 0 0 4px
+               padding: 0
+               background: none
+
+          .photo-name-container
+               width: 100%
+               display: flex
+               align-items: center
+               border: 1px solid $disabled-input-border-color
+               border-left: none
+               border-radius: 0 4px 4px 0
+               color: $disabled-input-color
+          .original-file-input
+               display: none
+               position: absolute
+               left: 5px
+
+          .photo-upload-label
+               width: 100%
+               height: 100%
+               display: flex
+               align-items: center
+               .photo-upload-block-text
+                    margin-left: 16px
+               .photo-upload-button-text
+                    margin: auto
+                    pointer-events: none
+
+          &.error
+               .upload-button, .photo-name-container
+                    border-color: $error-color
+
+
+
+//text-input
+.input-container
+     margin-top: 50px
+     height: $input-height
+     position: relative
+
+     .registration-input
+          width: $input-width - $input-padding-left
+          height: 100%
+          font-size: 16px
+          padding-left: $input-padding-left
+          border: $disabled-input-border-color solid 1px
+          border-radius: 4px
+          background: $page-background
+          &:focus
+               outline: none
+
+               & ~ .input-name
+                    display: block
+                    transform: translate(0, -29px)
+                    background: $page-background
+                    font-size: $input-message-font-size
+                    transition: all 0.7s
+          &.error
+               border-color: $error-color
+               &:focus ~ .input-name
+                    color: $error-color
+          @media (min-width: 768px)
+               width: $large-input-width - $input-padding-left
+
+     .input-name
+          position: absolute
+          top: 16px
+          width: 40px
+          text-align: center
+          left: $input-padding-left
+          font-size: 17px
+          color: $disabled-input-color
+          transition: all 0.8s
+          pointer-events: none
+
+          &.disabled
+               display: block
+               transform: translate(0, -29px)
+               background: $page-background
+               font-size: $input-message-font-size
+               transition: all 0.7s
+
+     .example-text
+          text-align: left
+          padding-left: $input-padding-left
+          color: $disabled-input-color
+
+
+
+
+//Fields error message
+.error-message
+     position: absolute
+     color: $error-color
+     padding-left: $input-padding-left
+     font-size: $input-message-font-size
+
+
+//Preloader
+.preloader
+     margin: auto
+     height: 44px
+     width: 44px
+     border: 4px solid $secondary-color
+     border-radius: 50%
+     border-left-color: rgba(255, 255, 255, 0)
+     animation: preloader-rotate 1s infinite linear
+@keyframes preloader-rotate
+     100%
+          transform: rotate(360deg)
+
