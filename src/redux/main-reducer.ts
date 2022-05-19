@@ -39,7 +39,7 @@ export const reducer = (state = initialState, action: MainActions): InitialState
             const {users, searchData} = action.payload
             return {
                 ...state,
-                users: searchData.nextPage === state.searchData.nextPage
+                users: action.payload.searchData.nextPage === 2
                     ? users
                     : state.users.concat(sortUsersByRegistrationDate(users)),
                 searchData: action.payload.searchData
