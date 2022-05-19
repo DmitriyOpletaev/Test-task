@@ -6,18 +6,21 @@ import './CommonElements.sass'
 export const RadioButtonsField: FC<RadioButtonsFieldProps> = (
     {fieldName,handleChange, checked, positions}
 ) => {
-    return (
 
+    return (
         <>
             {positions.map(position =>
                 <div className={'radio-buttons-container'} key={position.id}>
                     <label>
+                        <div className={`custom-radio-button ${checked===position.id && 'active'}`}>
+                            <div className={`custom-radio-button-dot ${checked===position.id && 'active'}`}/>
+                        </div>
                         <input
                             type={'radio'}
                             name={fieldName}
                             value={position.id}
                             checked={checked===position.id}
-                            onChange={(e)=>handleChange(position.id)}
+                            onChange={()=>handleChange(position.id)}
                         />
                         <span>{position.name}</span>
                     </label>

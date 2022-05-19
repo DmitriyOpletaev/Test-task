@@ -49,26 +49,6 @@
 
 
 
-
-//radio-buttons
-.radio-buttons-container
-
-     margin-top: 7px
-     position: relative
-     filter: hue-rotate(-40deg) saturate(180%)
-     -webkit-filter: hue-rotate(-40deg) saturate(180%)
-
-     label
-          display: flex
-          cursor: pointer
-          user-select: none
-
-          input[type='radio']
-               height: 20px
-               width: 20px
-               cursor: pointer
-
-
 // Avatar
 $user-null-photo: url('../../assets/user-null-photo.svg')
 .avatar
@@ -83,6 +63,44 @@ $user-null-photo: url('../../assets/user-null-photo.svg')
           height: 100%
           width: 100%
           object-position: center center
+
+
+//radio-buttons
+.radio-buttons-container
+
+     margin-top: 7px
+     position: relative
+
+     label
+          display: flex
+          cursor: pointer
+          user-select: none
+          align-items: center
+          .custom-radio-button
+               width: 19px
+               margin-right: 12px
+               display: flex
+               justify-content: center
+               align-items: center
+               height: 19px
+               cursor: pointer
+               border: 1px solid $disabled-input-border-color
+               border-radius: 50%
+               &.active
+                    border-color: $secondary-color
+               .custom-radio-button-dot
+                    background: $secondary-color
+                    height: 10px
+                    width: 10px
+                    border-radius: 50%
+                    display: none
+                    &.active
+                         display: block
+
+          input[type='radio']
+               display: none
+
+
 
 
 //upload file input
